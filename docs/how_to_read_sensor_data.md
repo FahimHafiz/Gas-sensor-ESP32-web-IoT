@@ -9,7 +9,7 @@ This section describes how to read analog data from the MQ-2 gas sensor using th
 - **Connecting Wires**
 
 ### Circuit Diagram
-![Circuit Diagram (Hardware Implementation)](images/circuit_img/hardware_implemented_img.jpg)
+![Circuit Diagram (Hardware Implementation)](../images/circuit_img/hardware_implemented_img.jpg)
 
 ### Step 1: Connecting the Sensor
 - Connect the **analog output (A0)** of the MQ-2 sensor to an analog pin on the ESP32 (e.g., GPIO13).
@@ -17,7 +17,7 @@ This section describes how to read analog data from the MQ-2 gas sensor using th
 - Connect **GND** to the ground pin of the ESP32.
 
 ### Step 2: Reading Analog Data
-Using the Arduino IDE, write code to read analog data from the sensor. Refer to the ESP32 code in [esp32_gas_sensor.ino](code/esp32code-arduino-ide/esp32_gas_sensor.ino).
+Using the Arduino IDE, write code to read analog data from the sensor. Refer to the ESP32 code in [esp32_gas_sensor.ino](../code/esp32code-arduino-ide/esp32_gas_sensor.ino).
 
 ### Step 3: Converting to PPM
 The MQ-2 sensor provides raw analog data, which can be converted to an approximate PPM value based on calibration factors. This is done using a simple calculation within the ESP32 code.
