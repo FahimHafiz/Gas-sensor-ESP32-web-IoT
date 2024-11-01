@@ -18,8 +18,6 @@ void setup() {
   Serial.println("MQ2 warming up!");
   delay(20000); // allow the MQ2 to warm up
   pinMode(sensorPin, INPUT);
-  //set the resolution to 12 bits (0-4095)
-  analogReadResolution(12);
   connectWiFi();
 }
 
