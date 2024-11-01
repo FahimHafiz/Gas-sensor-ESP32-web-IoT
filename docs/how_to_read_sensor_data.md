@@ -39,4 +39,9 @@ After a few moment, when gas is exerted surrounding the sensor, the PPM value st
 <figcaption style="text-align: center;">Figure 3. PPM value reading shown in the serial monitor of the Arduino IDE after gas is exerted surrounding the sensor</figcaption>
 
 ### Now, the main question is how we are converting Analog Data to PPM value??
-MQ-2 gas sensor doesn't provide the PPM value for the gases, only their corresponding Analog value. So, how to convert these Analog value to PPM value? For that we need to look into the datasheet of the MQ-2. 
+MQ-2 gas sensor doesn't provide the PPM value for the gases, only their corresponding Analog value. So, how to convert these Analog value to PPM value? For that we need to look into the datasheet of the MQ-2, [MQ2-Datasheet](https://www.mouser.com/datasheet/2/321/605-00008-MQ-2-Datasheet-370464.pdf). In the second page of this datasheet, we have a experimental figure of the sensitivity characteristics of the MQ-2 as shown below in Figure 4:
+![Figure 4. sensitivity characteristics of the MQ-2](../images/ppm_reading/mq2_datasheet.png)
+<br>
+<figcaption style="text-align: center;">Figure 4. sensitivity characteristics of the MQ-2</figcaption>
+
+Figure 4 demonstrates the Rs/R0 changes with PPM value for different gases (H2, CH4, CO, alcohol, smoke,..) that can be detected by the MQ-2, where the Rs is the sensor resistance that changes with gas level and R0 is a constant value of the same sensor resistance when no gas level exists (which can be measured using multimeter as we did in our experiment). We got R0 value of 20Kohm (we set that in our code also!). Simple Voltage divider law (VDR) can applied to determine the Rs value for a particular Analog voltage data (reading from A0). Then, using a particular straight line concept from the Figure 4, we can determine the PPM value in real time! We have to choose the straight line according to the gas we are trying to measure. Here, we a simple calculation of PPM in the following figure so that everyone can understand more easily!
