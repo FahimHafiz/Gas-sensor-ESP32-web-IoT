@@ -46,5 +46,12 @@ MQ-2 gas sensor doesn't provide the PPM value for the gases, only their correspo
 
 Figure 4 demonstrates the Rs/R0 changes with PPM value for different gases (H2, CH4, CO, alcohol, smoke,..) that can be detected by the MQ-2, where the Rs is the sensor resistance that changes with gas level and R0 is a constant value of the same sensor resistance when no gas level exists (which can be measured using multimeter as we did in our experiment). We got R0 value of 20Kohm (we set that in our code also!). Simple Voltage divider law (VDR) can applied to determine the Rs value for a particular Analog voltage data (reading from A0). Then, using a particular straight line concept from the Figure 4, we can determine the PPM value in real time! We have to choose the straight line according to the gas we are trying to measure. Here, we a simple calculation of PPM in the following figure so that everyone can understand more easily!
 
+Here is the details PPM calculation I have done in hand for easier understanding, feel free to reach out if you still have any questions!
+![Figure 5a. PPM Calculation from Analog Read (A0)](../images/ppm_reading/ppm_calculation1.png)
+![Figure 5a. PPM Calculation from Analog Read (A0)](../images/ppm_reading/ppm_calculation2.png)
+<br>
+<figcaption style="text-align: center;">Figure 5. PPM Calculation from Analog Read (A0)</figcaption>
+
+You can also check the pdf for this calculation--> [View PDF](ppm_calculation_details.pdf)
 
 For more details, you can look at one of the experiments We designed (Me and my colleagues at UIU) regarding MQ-2 gas sensor and its interfacing, reading PPM value in this following link: [View PDF](Exp1_MQ2.pdf)
